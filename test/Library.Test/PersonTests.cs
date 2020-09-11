@@ -6,18 +6,19 @@ namespace Tests
 {
     public class Tests
     {
+        private Person person;
         [SetUp]
         public void Setup()
         {
             // Insertá tu código de inicialización aquí
-            Person nuevo = new Person ("Santiago","5.146.871-4");
+            this.person = new Person ("Santiago","5.146.871-4");
         }
 
         [Test]
         public void IdFunciona() // Cambiá el nombre para indicar qué estás probando
         {
             
-            Equals(IdUtils.IdIsValid(nuevo.ID),true);
+            Equals(IdUtils.IdIsValid(person.ID),true);
             // Insertá tu código  de pruebaaquí
         }
         
