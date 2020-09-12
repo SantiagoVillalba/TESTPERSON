@@ -10,32 +10,71 @@ namespace Tests
         [SetUp]
         public void Setup()
         {
-            // Insertá tu código de inicialización aquí
+            
             this.person = new Person ("Santiago","5.146.871-4");
         }
 
         [Test]
-        public void IdFunciona() // Cambiá el nombre para indicar qué estás probando
+        public void IdFunciona() 
         {
             
             Equals(IdUtils.IdIsValid(person.ID),true);
-            // Insertá tu código  de pruebaaquí
+            
         }
         
         [Test]
-        public void IdVacio() // Cambiá el nombre para indicar qué estás probando
+        public void IdVacio() 
         {
-            //Console.WriteLine(IdUtils.IdIsValid(""));
+            
             Equals(IdUtils.IdIsValid(""),false);
-            // Insertá tu código  de pruebaaquí
+            
         }
         [Test]
-        public void IdChecking() // Cambiá el nombre para indicar qué estás probando
+        public void IdChecking() 
         {
-            //Console.WriteLine(IdUtils.IdIsValid(""));
+            
             Equals(IdUtils.IdIsValid("5.146.871-5"),false);
-            // Insertá tu código  de pruebaaquí
+            
         }
+
+        [Test]
+
+        public void InvalidName() 
+        {
+            person.Name="";
+            
+            Equals(person.Name,"Santiago");
+            
+        }
+
+        [Test]
+        public void ValidName() 
+        {
+            person.Name="Pedro";
+            
+            Equals(person.Name,"Pedro");
+            
+        }
+
+        [Test]
+        public void InvalidIdPerson() 
+        {
+            person.ID="5.146.871-5";
+            
+            Equals(person.ID,"5.146.871-4");
+            
+        }
+
+        [Test]
+        public void ValidIdPerson() 
+        {
+            person.ID="5.377.044-0";
+            
+            Equals(person.ID,"5.377.044-0");
+            
+        }
+        
+
 
         
     }
